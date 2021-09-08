@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.skr.dao.ShoeMapper">
+    <insert id="addShoe" parameterType="Shoes">
+        insert into myapp.t_shoes (shoeID,shoeSize,shoePurchasePrice)
+        values (#{shoeID},#{shoeSize},#{shoePurchasePrice})
+    </insert>
+
+    <delete id="deleteShoeById" parameterType="int">
+        delete from myapp.t_shoes
+        where identifyID = #{identifyID}
+    </delete>
+
+    <update id="updateShoe" parameterType="Shoes">
+        update myapp.t_shoes
+        set shoeID = #{shoeID},shoeSize = #{shoeSize},shoePurchasePrice = #{shoePurchasePrice},shoeSalePrice = #{shoeSalePrice}, shoeTransportationCost = #{shoeTransportationCost},shoeProfit = #{shoeProfit},shoeStatus = #{shoeStatus}
+        where
+    </update>
+
+    <select id="queryShoeById" resultType="Shoes">
+        select * from myapp.t_shoes
+        where identifyID = #{identifyID}
+    </select>
+
+    <select id="queryAllShoe" resultType="Shoes">
+        select * form myapp.t_shoes
+    </select>
+
+</mapper>
