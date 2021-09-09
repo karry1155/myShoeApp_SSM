@@ -18,7 +18,7 @@ public class ShoeServiceImpl implements ShoeService {
     }
 
     public int addShoe(Shoes shoes) {
-        return shoeMapper.addShoe();
+        return shoeMapper.addShoe(shoes);
     }
 
     public int deleteShoe(int id) {
